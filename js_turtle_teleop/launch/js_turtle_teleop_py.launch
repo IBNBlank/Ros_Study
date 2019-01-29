@@ -9,7 +9,7 @@
     </node>
 
     <!-- teleop -->
-    <node pkg="js_turtle_teleop" type="js_turtle_teleop_node" name="js_turtle_teleop_node" output="screen">
+    <node pkg="js_turtle_teleop" type="js_turtle_teleop_node.py" name="js_turtle_teleop_node_py" output="screen">
         <param name="linear_axis_num" value="1" type="int" />
         <param name="angular_axis_num" value="0" type="int" />
         <param name="max_linear_speed" value="2.0" type="double" />

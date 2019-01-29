@@ -17,7 +17,7 @@ class Teleop
         int lin_axis_, ang_axis_;
 };
 
-Teleop::Teleop(): lin_speed_(0.0), ang_speed_(0.0)
+Teleop::Teleop(): nh_("~"), lin_speed_(0.0), ang_speed_(0.0)
 {
     nh_.param<int>("linear_axis_num", lin_axis_, 1);
     nh_.param<int>("angular_axis_num", ang_axis_, 3);
@@ -46,7 +46,7 @@ void Teleop::callback(const sensor_msgs::Joy::ConstPtr& Joy)
 
 int main(int argc,char** argv)
 {
-    ros::init(argc, argv, "js_teleop");
+    ros::init(argc, argv, "js_turtle_teleop_node");
     Teleop teleop;
     ros::Rate loop_rate(50);
 
