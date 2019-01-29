@@ -4,11 +4,12 @@
 # @Author: IBNBlank
 # @Date:   2019-01-28 22:50:17
 # @Last Modified by:   IBNBlank
-# @Last Modified time: 2019-01-29 21:54:21
+# @Last Modified time: 2019-01-29 22:14:20
 
 import rospy
 from geometry_msgs.msg import Twist
 from sensor_msgs.msg import Joy
+
 
 class Teleop(object):
     def __init__(self):
@@ -31,6 +32,8 @@ class Teleop(object):
         self.__lin_speed = data.axes[self.__lin_axis] * self.__max_lin_speed
         self.__ang_speed = data.axes[self.__ang_axis] * self.__max_ang_speed
         rospy.loginfo("Turtle speed change: linear:{0:.3f} angular:{1:.3f}".format(self.__lin_speed, self.__ang_speed))
+
+
 
 if __name__ == '__main__':
     rospy.init_node('js_turtle_teleop_node', anonymous=True)
