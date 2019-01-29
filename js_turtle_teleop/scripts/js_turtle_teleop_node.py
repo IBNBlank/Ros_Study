@@ -32,11 +32,11 @@ class Teleop(object):
         self.__ang_speed = data.axes[self.__ang_axis] * self.__max_ang_speed
         rospy.loginfo("Turtle speed change: linear:{0:.3f} angular:{1:.3f}".format(self.__lin_speed, self.__ang_speed))
 
-    if __name__ == '__main__':
-        rospy.init_node('js_turtle_teleop_node', anonymous=True)
-        teleop = Teleop()
-        rate = rospy.Rate(50)
+if __name__ == '__main__':
+    rospy.init_node('js_turtle_teleop_node', anonymous=True)
+    teleop = Teleop()
+    rate = rospy.Rate(50)
 
-        while not rospy.is_shutdown():
-            teleop.pub_twist()
-            rate.sleep()
+    while not rospy.is_shutdown():
+        teleop.pub_twist()
+        rate.sleep()

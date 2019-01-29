@@ -11,7 +11,7 @@
     <!-- teleop -->
     <node pkg="js_turtle_teleop" type="js_turtle_teleop_node" name="js_turtle_teleop_node" output="screen">
         <param name="linear_axis_num" value="1" type="int" />
-        <param name="angular_axis_num" value="0" type="int" />
+        <param name="angular_axis_num" value="3" type="int" />
         <param name="max_linear_speed" value="2.0" type="double" />
         <param name="max_angular_speed" value="2.0" type="double" />
     </node>
