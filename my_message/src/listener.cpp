@@ -1,16 +1,16 @@
 #include "ros/ros.h"
-#include "std_msgs/String.h"
+#include "my_message/chat_msg.h"
 
-void callback(const std_msgs::String::ConstPtr& msg)
+void callback(const my_message::chat_msg::ConstPtr& msg)
 {
-    ROS_INFO("I heard: [%s]", msg -> data.c_str());
+    ROS_INFO("I heard [%s] said '%s'", msg -> name.c_str(), msg -> chat.c_str());
 }
 
 
 
 int main(int argc, char **argv)
 {
-    ros::init(argc, argv, "listener");
+    ros::init(argc, argv, "listener_cpp");
     ros::NodeHandle nh;
     ros::Subscriber sub = nh.subscribe("chatter", 10, callback);
 

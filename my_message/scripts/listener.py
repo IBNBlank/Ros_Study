@@ -7,16 +7,16 @@
 # @Last Modified time: 2019-01-29 21:54:21
 
 import rospy
-from std_msgs.msg import String
+from my_message.msg import chat_msg
 
 
 def callback(data):
-    rospy.loginfo(rospy.get_caller_id() + "I heard [{}]".format(data.data))
+    rospy.loginfo("I heard [{0}] said '{1}'".format(data.name, data.chat))
 
 
 
 if __name__ == '__main__':
-    rospy.init_node("listener", anonymous=True)
-    sub = rospy.Subscriber("chatter", String, callback, queue_size=10)
+    rospy.init_node("listener_py", anonymous=True)
+    sub = rospy.Subscriber("chatter", chat_msg, callback, queue_size=10)
 
     rospy.spin()
