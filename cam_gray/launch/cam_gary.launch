@@ -1,0 +1,17 @@
+<launch>
+
+    <!-- Camera -->
+    <node pkg="uvc_camera" type="uvc_camera_node" name="mycam" />
+
+    <!-- Converter -->
+    <node pkg="cam_gray" type="cam_gray_node" name="gray" />
+
+    <!-- Viewer -->
+    <node pkg="image_view2" type="image_view2" name="origin">
+        <remap from="image" to="image_raw"/>
+    </node>
+    <node pkg="image_view2" type="image_view2" name="converted">
+        <remap from="image" to="image_raw_convert"/>
+    </node>
+
+</launch>
